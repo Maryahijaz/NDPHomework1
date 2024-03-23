@@ -85,8 +85,6 @@ namespace NDPHomework
             if (result == DialogResult.OK)
             {
                 string filePath = saveFileDialog1.FileName;
-
-               // File.WriteAllText(filePath, "Hello, World!");
                 MessageBox.Show("File saved successfully!");
             }
         }
@@ -95,6 +93,7 @@ namespace NDPHomework
 
         private void fontSizeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // Yazı tepi değiştirmek.
             FontDialog fontDialog1 = new FontDialog();
             if (fontDialog1.ShowDialog() == DialogResult.OK & !String.IsNullOrEmpty(richTextBox1.Text))
             {
@@ -104,6 +103,7 @@ namespace NDPHomework
 
         private void textColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           // Text rengi değiştirmek.
             ColorDialog colorDialog1 = new ColorDialog();
             
             if (colorDialog1.ShowDialog() == DialogResult.OK & !String.IsNullOrEmpty(richTextBox1.Text))
@@ -118,8 +118,8 @@ namespace NDPHomework
 
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             {
-                this.BackColor = colorDialog1.Color;
-                richTextBox1.BackColor = colorDialog1.Color;
+                this.BackColor = colorDialog1.Color; // Background rengi değiştirmek.
+                richTextBox1.BackColor = colorDialog1.Color; // Rich Text Box background rengi değiştirmek.
             }
         }
 
@@ -139,9 +139,9 @@ namespace NDPHomework
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             TextBox txtBox1 = this.ActiveControl as TextBox;
-            if (richTextBox1.SelectedText != string.Empty)
-                Clipboard.SetData(DataFormats.Text, richTextBox1.SelectedText);
-            richTextBox1.SelectedText = string.Empty;
+            if (richTextBox1.SelectedText != string.Empty)// Rich Text Box boş olmama şartı.
+                Clipboard.SetData(DataFormats.Text, richTextBox1.SelectedText);//Click yaptığımız texti kopyalamak.
+            richTextBox1.SelectedText = string.Empty; 
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -149,7 +149,7 @@ namespace NDPHomework
 
             TextBox txtBox1 = this.ActiveControl as TextBox;
             if (richTextBox1.SelectedText != string.Empty)
-                Clipboard.SetData(DataFormats.Text, richTextBox1.SelectedText);
+                Clipboard.SetData(DataFormats.Text, richTextBox1.SelectedText); // Click yaptığımız texti yapıştırmak.
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
