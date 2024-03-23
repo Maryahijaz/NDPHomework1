@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static System.Net.WebRequestMethods;
 
 namespace NDPHomework
 {
@@ -19,6 +19,7 @@ namespace NDPHomework
         public Form1()
         {
             InitializeComponent();
+            
         }
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -31,6 +32,7 @@ namespace NDPHomework
         }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
+           
         }
         private void fontDialog1_Apply(object sender, EventArgs e)
         {
@@ -155,6 +157,12 @@ namespace NDPHomework
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             richTextBox1.Paste();
+        }
+
+        private void gitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Maryahijaz/NDPHomework1");
+
         }
     }
     
